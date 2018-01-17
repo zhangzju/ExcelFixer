@@ -1,19 +1,101 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
   <meta charset="UTF-8">
-  <title>CSS3手表倒计时动画DEMO演示</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700" rel="stylesheet">
-  
-  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-
+  <title>决赛</title>
+  <link rel='stylesheet prefetch' href='js/font-awesome.min.css'>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-<div style="text-align:center;clear:both">
-<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
-<script src="/follow.js" type="text/javascript"></script>
-</div>
-      <iframe frameborder="0" scrolling="no" src="index2.html" width="100%" height="700px"></iframe>
+  <div style="text-align:center;clear:both">
+  </div>
+  <div id="keyword">
+    <div id="word-panel">
+      <div style="position:relative;width:100%;height:100%">
+        <p id="word">Word</p>
+        <p id="count">0</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="theme-green" id="wrapper">
+    <div id="card">
+      <div id="settings">
+        <div id="theme">
+          <div class="option selected" id="green">
+            <div class="color circle"></div>
+            <i class="fa fa-check"></i>
+          </div>
+          <div class="option" id="blue">
+            <div class="color circle"></div>
+            <i class="fa fa-check"></i>
+          </div>
+          <div class="option" id="yellow">
+            <div class="color circle"></div>
+            <i class="fa fa-check"></i>
+          </div>
+          <div class="option" id="red">
+            <div class="color circle"></div>
+            <i class="fa fa-check"></i>
+          </div>
+        </div>
+      </div>
+      <div class="animate-in" id="timer">
+        <div id="top-band">
+          <div class="border"></div>
+        </div>
+        <div id="bottom-band">
+          <div class="border"></div>
+        </div>
+        <div class="circle" id="center-band">
+          <div class="circle" id="start-button">
+            <i class="fa fa-clock-o"></i>
+            <i class="fa fa-play"></i>
+            <i class="fa fa-pause"></i>
+          </div>
+          <div class="circle" id="dial-dots-wrapper">
+            <div class="circle" id="dial-dots"></div>
+          </div>
+          <div class="circle" id="dial-track">
+            <div class="circle" id="dial">
+              <div class="circle" id="dial-ball"></div>
+            </div>
+          </div>
+          <div class="circle" id="band-border"></div>
+          <div class="circle" id="base"></div>
+          <div class="circle" id="center">
+            <div id="time">
+              <div id="sec">00</div>
+              <div id="centi-sec">00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src='js/moment.min.js'></script>
+  <script src='js/lodash.min.js'></script>
+  <script src="js/index.js"></script>
+  <script>
+    var wordset = [["特朗普","安妮宝贝","妮维雅","罗纳尔迪尼奥","西兰花","羽绒服","贾乃亮","杜蕾斯","金拱门","中国有嘻哈","H&M","绿萝","雾霾","昆明"]];
+    var group = 0;
+    var index = 0;
+    var count = 0;
+    document.getElementById("keyword").onclick = function(){
+      if(wordset[group][index]){
+        document.getElementById("word").innerText = wordset[group][index];
+        index++;
+        document.getElementById("count").innerHTML = count++;
+      }else{
+        alert("通关！");
+        count =0;
+      }  
+    }
+  </script>
+
 </body>
+
 </html>

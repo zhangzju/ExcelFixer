@@ -116,7 +116,7 @@ body {
 #card {
   left: 50%;
   position: absolute;
-  top: 50%;
+  top: 65%;
   transform: translateX(-50%) translateY(-50%);
   background: white;
   border-radius: 2px;
@@ -134,6 +134,41 @@ body {
   height: 80px;
   opacity: 1;
   width: 80px;
+}
+
+#keyword {
+  margin-bottom: -40vh;
+  min-height: 40vh;
+}
+
+#word-panel {
+  left: 50%;
+  position: absolute;
+  top: 15vh;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+  height: 200px;
+  overflow: hidden;
+  width: 700px;
+  z-index: 10;
+}
+
+#word{
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 80px;
+  line-height: 80%;
+  display: inline-block;
+  width: 80%;
+}
+
+#count{
+  display: inline-block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 50px;
+  text-align: center;
 }
 
 #settings {
