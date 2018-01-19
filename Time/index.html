@@ -14,12 +14,16 @@
   <div id="keyword">
     <div id="word-panel">
       <div style="position:relative;width:100%;height:100%">
-        <p id="word">Word</p>
+        <p id="word">准备</p>
         <p id="count">0</p>
       </div>
     </div>
   </div>
-
+  <div id="button">
+    <div id="next"><p>下一个</p></div>
+    <div id="jump"><p>跳过</p></div>
+    <div id="nextgroup"><p>下一组</p></div>
+  </div>
   <div class="theme-green" id="wrapper">
     <div id="card">
       <div id="settings">
@@ -80,20 +84,58 @@
   <script src='js/lodash.min.js'></script>
   <script src="js/index.js"></script>
   <script>
-    var wordset = [["特朗普","安妮宝贝","妮维雅","罗纳尔迪尼奥","西兰花","羽绒服","贾乃亮","杜蕾斯","金拱门","中国有嘻哈","H&M","绿萝","雾霾","昆明"]];
+    var wordset = ["打麻将","李宇春","鸡飞狗跳","小肥羊","长城","哈尔滨","陌陌","卓伟","运营商事业部","R&D","西兰花","阿里","小鲜肉","范冰冰","声东击西","赤壁","杨贵妃","黄帝","山羊","喝酒","马尾","青奥会","泸定桥","郑州大学","希拉里","天若有情天亦老","喜欢你","演员的诞生","童年","绿帽子","曝光","低落","方便面","三生三世十里桃花","皮裤","死海","血拼","天空","火车票","WTO","广岛之恋","卡卡","狗尾巴草","APPLE","减肥","樱桃小丸子","文字","跨栏","印度尼西亚","海狮","刺杀","礼服","火锅","冰天雪地","SNH48","地理","苟利国家生死以","再见青春","贝壳","共产主义","自由飞翔","斗鸡眼","千手观音","百度外卖","打针","跳一跳","芹菜","梁山好汉","驾校","说明书","CIO","九尾狐","视频","抽烟","麦迪","双层巴士","跳水","香格里拉","泥鳅","剪辑","年会","草船借箭","完璧归赵","龟儿子","糖醋排骨","我和你","丈母娘","陷阱","国家","KTV","明白","普联技术","会员","小程序","柜子","隐私","街电","草原","输入法","广场舞","出货","妖猫传","书签","支付宝","折耳根","南征北战","草稿","浏览器","羌族","光头","家长会","船期","运动鞋","两小儿辩日","电量","南阳","FIRST BLOOD","阴阳师","靠枕","鼠标","ADOBE","油漆","星空卫视","破砖"];
     var group = 0;
     var index = 0;
     var count = 0;
-    document.getElementById("keyword").onclick = function(){
-      if(wordset[group][index]){
-        document.getElementById("word").innerText = wordset[group][index];
+    document.getElementById("next").onclick = function(){
+      if(wordset[index]){
+        document.getElementById("word").innerText = wordset[index];
         index++;
         document.getElementById("count").innerHTML = count++;
       }else{
         alert("通关！");
         count =0;
       }  
-    }
+    };
+
+    document.getElementById("jump").onclick = function(){
+      if(wordset[index]){
+        document.getElementById("word").innerText = wordset[index];
+        index++;
+      }else{
+        alert("全部猜完了，告诉刘芳再来点儿！");
+        count =0;
+      }
+    };
+
+    document.getElementById("nextgroup").onclick=function(){
+      console.log(wordset.length);
+      
+      switch(group){
+        case 0:
+        changeTheme('green');
+        break;
+        case 1:
+        changeTheme('yellow');
+        break;
+        case 2: 
+        changeTheme('blue');
+        break;
+        case 3: 
+        changeTheme('red');
+        break;
+      }
+      if(group <3 ){
+        group++;
+        document.getElementById("word").innerText = "准备";
+        index++;
+        count = 0;
+        document.getElementById("count").innerHTML = count++;
+      }else{
+          group =0;
+      }
+    };
   </script>
 
 </body>

@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>知识之火</title>
+
+<style type="text/css">
+@import url("css/font-awesome.css");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font: 16px/1 'Open Sans', sans-serif;
+  color: #555;
+  background: #e5e5e5;
+}
+
+body {
+  padding: 50px;
+}
+
+.togglebox {
+  width: 400px;
+  margin: 0 auto;
+  background: #fff;
+  transform: translateZ(0);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+label {
+  position: relative;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 700;
+  border-top: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+
+label[for*='1'] {
+  border: 0;
+}
+
+label:after {
+  content: '\f078';
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-family: fontawesome;
+  transform: rotate(90deg);
+  transition: .3s transform;
+}
+
+section {
+  height: 0;
+  transition: .3s all;
+  overflow: hidden;
+}
+
+#toggle1:checked ~ label[for*='1']:after,
+#toggle2:checked ~ label[for*='2']:after,
+#toggle3:checked ~ label[for*='3']:after,
+#toggle4:checked ~ label[for*='4']:after,
+#toggle5:checked ~ label[for*='5']:after,
+#toggle6:checked ~ label[for*='6']:after {
+  transform: rotate(0deg);
+}
+
+#toggle1:checked ~ #content1,
+#toggle2:checked ~ #content2,
+#toggle3:checked ~ #content3,
+#toggle4:checked ~ #content4,
+#toggle5:checked ~ #content5,
+#toggle6:checked ~ #content6 {
+  height: 200px;
+}
+
+p {
+  margin: 15px 0;
+  padding: 0 20px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+
+<div class="togglebox">
+  
+  <input id="toggle1" type="radio" name="toggle" />
+  <label for="toggle1">第一题</label>
+  
+  <section id="content1">
+  <p>
+  电视剧《白夜追凶》中潘粤明饰演的弟弟角色叫？
+  </p>
+  </section>
+  
+  <input id="toggle2" type="radio" name="toggle" />
+  <label for="toggle2">第二题</label>
+  
+  <section id="content2">
+    <p>
+    以下哪位人物没有代言康师傅方便面？
+    </p>
+    <p>
+        A.	王宝强        B.陈羽凡          C.汪涵                   D.贾乃亮
+    </p>
+  </section>
+  
+  <input id="toggle3" type="radio" name="toggle" />
+  <label for="toggle3">第三题</label>
+  
+  <section id="content3">
+    <p>
+    达拉斯独行侠队被称为天王的当家球星是谁？ 
+    </p>
+  </section>
+
+  <input id="toggle4" type="radio" name="toggle" />
+  <label for="toggle4">第四题</label>
+  
+  <section id="content4">
+    <p>
+   《长恨歌》中描写“天长地久有时尽”的后半句是什么？
+    </p>
+  </section>
+
+  <input id="toggle5" type="radio" name="toggle" />
+  <label for="toggle5">第五题</label>
+  
+  <section id="content5">
+    <p>
+    我司LOGO“TP-LINK”原意是指哪一种通信线材？
+    </p>
+  </section>
+
+  <input id="toggle6" type="radio" name="toggle" />
+  <label for="toggle6">附加题</label>
+  
+  <section id="content6">
+    <p>
+    音乐剧《费加罗的婚礼》是谁的代表作？
+    </p>
+  </section>
+</div>
+
+<div style="text-align:center;clear:both">
+</div>
+
+</body>
+</html>
+

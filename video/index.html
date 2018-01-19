@@ -1,29 +1,127 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<title>Video.js 6.2.8</title>
-	<link href="css/video-js.css" rel="stylesheet">	
-	<style>
-		body{background-color: #191919}
-		.m{ width: 740px; height: 400px; margin-left: auto; margin-right: auto; margin-top: 100px; }
-	</style>
+    <meta charset="UTF-8">
+    <title>灵犀之巅</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-	<div class="m">
-		<video id="my-video" class="video-js" controls preload="auto" width="740" height="400"  data-setup="{}">
-			<source src="video/video01.mp4" type="video/mp4">
-		  </video>
-		  <script src="js/video.min.js"></script>	
-		  <script type="text/javascript">
-			var myPlayer = videojs('my-video');
-			videojs("my-video").ready(function(){
-				var myPlayer = this;
-				myPlayer.play();
-			});
-		</script>
-	</div>
+    <div class="container">
+        <div id="wrapper">
+            <div id="skPlayer"></div>
+        </div>
+        <div id="answer">
+            <div id="answer01" class="look">
+ <p>一</p>
+            </div>
+            <div id="answer02" class="look">
+                    <p>二</p>
+            </div>
+            <div id="answer03" class="look">
+                    <p>三</p>
+            </div>
+            <div id="answer04" class="look">
+                    <p>四</p>
+            </div>
+            <div id="answer05" class="look">
+                    <p>五</p>
+            </div>
+            <div id="answer06" class="look">
+                    <p>附加</p>
+                </div>
+        </div>
+    </div>
 
+
+    <script src="js/skPlayer.min.js"></script>
+    <script>
+        document.getElementById("answer01").onclick = function(){
+            window.open("video01.html");
+        }
+        document.getElementById("answer02").onclick = function(){
+            window.open("video02.html");
+        }
+        document.getElementById("answer03").onclick = function(){
+            window.open("video03.html");
+        }
+        document.getElementById("answer04").onclick = function(){
+            window.open("video04.html");
+        }
+        document.getElementById("answer05").onclick = function(){
+            window.open("video05.html");
+        }
+        document.getElementById("answer06").onclick = function(){
+            window.open("video06.html");
+        }
+        var player = new skPlayer({
+            mode: 'singleloop',
+            music: {
+                //必需项,音乐配置
+                type: 'file',
+                //必需项,自配置文件方式指定填'file'
+                source: [
+                    //必需项,音乐文件数组
+                    {
+                        name: '第一题',
+                        //必需项,歌名
+                        author: '电影片段',
+                        //必需项,歌手
+                        src: 'video/sound01.mp3',
+                        //必需项,音乐文件
+                        cover: 'resource/music.png'
+                        //必需项,封面图片
+                    }, {
+                        name: '第二题',
+                        //必需项,歌名
+                        author: '电影片段',
+                        //必需项,歌手
+                        src: 'video/sound02.mp3',
+                        //必需项,音乐文件
+                        cover: 'resource/music.png'
+                        //必需项,封面图片
+                    }, {
+                        name: '第三题',
+                        //必需项,歌名
+                        author: '电影片段',
+                        //必需项,歌手
+                        src: 'video/sound03.mp3',
+                        //必需项,音乐文件
+                        cover: 'resource/music.png'
+                        //必需项,封面图片
+                    }, {
+                        name: '第四题',
+                        //必需项,歌名
+                        author: '电影片段',
+                        //必需项,歌手
+                        src: 'video/sound04.mp3',
+                        //必需项,音乐文件
+                        cover: 'resource/music.png'
+                        //必需项,封面图片
+                    }, {
+                        name: '第五题',
+                        //必需项,歌名
+                        author: '电影片段',
+                        //必需项,歌手
+                        src: 'video/sound05.mp3',
+                        //必需项,音乐文件
+                        cover: 'resource/music.png'
+                        //必需项,封面图片
+                    }, {
+                        name: '附加题',
+                        //必需项,歌名
+                        author: '电影片段',
+                        //必需项,歌手
+                        src: 'video/sound06.mp3',
+                        //必需项,音乐文件
+                        cover: 'resource/music.png'
+                        //必需项,封面图片
+                    }
+                ]
+            }
+        });
+    </script>
 </body>
+
 </html>

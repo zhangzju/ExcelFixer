@@ -420,7 +420,7 @@ body {
 .el:nth-child(4) .el__bg:before {
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
-  background-image: url("picture04.jpg");
+  background-image: url("picture06.jpg");
 }
 .el:nth-child(5) {
   -webkit-transform: translate3d(420.8333333333%, 0, 0);

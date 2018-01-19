@@ -83,6 +83,7 @@ var appendDialDots = function appendDialDots() {
     addClass(dotWrapper, 'dot-wrapper');
     addClass(dot, 'dot');
     dotWrapper.appendChild(dot);
+    
 
     angle = increment * i - 90;
     rad = angle * (Math.PI / 180);
